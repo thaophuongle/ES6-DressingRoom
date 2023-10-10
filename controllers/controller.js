@@ -15,13 +15,15 @@ const renderProductList = (productList) => {
   let content = "";
   productList.forEach((element) => {
     content += `
-    <div class="card" style="width: 18rem;">
-            <img src="${element.imgSrc_jpg}" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">${element.name}</h5>
-                <button href="#" class="btn btn-primary">Thử đồ</button>
-            </div>
-        </div>
+    <div class="col-lg-3 col-md-6 mb-5">
+    <div class="card justify-content-center">
+    <img src="${element.imgSrc_jpg}" class="card-img-top" style="height: 100%;" alt="">
+    <div class="card-body">
+        <h5 class="card-title">${element.name}</h5>
+        <button href="#" class="btn btn-primary">Thử đồ</button>
+    </div>
+</div>
+    </div>
     `;
   });
   document.querySelector("#tabPane").innerHTML = content;

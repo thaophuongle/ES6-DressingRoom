@@ -150,7 +150,7 @@ hr {
 }
 .well {
   background-color: #eff1f1;
-  height: 700px;
+  height: auto;
   width: 100%;
 }
 
