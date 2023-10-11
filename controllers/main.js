@@ -30,11 +30,43 @@ const fetchProductList = () => {
 };
 fetchProductList();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const defaultTab = navPillsContainer.querySelector(
-    "[data-type='topclothes']"
-  );
-  if (defaultTab) {
-    defaultTab.click();
-  }
-});
+const thuDo = (id) => {
+  getProductById(id)
+    .then((res) => {
+      const product = res.data;
+
+      let targetImg;
+      switch (product.type) {
+        case "topclothes":
+          targetImg = document.getElementById("bikinitopImg");
+          break;
+        case "botclothes":
+          targetImg = document.getElementById("bikinibottomImg");
+          break;
+        case "shoes":
+          targetImg = document.getElementById("feetImg");
+          break;
+        case "handbags":
+          targetImg = document.getElementById("handbagImg");
+          break;
+        case "necklaces":
+          targetImg = document.getElementById("necklaceImg");
+          break;
+        case "hairstyle":
+          targetImg = document.getElementById("hairstyleImg");
+          break;
+        case "background":
+          targetImg = document.getElementById("backgroundImg");
+          break;
+        default:
+          targetImg = null;
+          break;
+      }
+      if (targetImg) {
+        targetImg.src = product.imgSrc_png;
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

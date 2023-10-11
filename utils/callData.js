@@ -19,3 +19,9 @@ const getProductList = () => {
     // },
   });
 };
+
+const getProductById = (id) => {
+  return axios({
+    url: `${BASE_URL_TABPANES}/${id}`,
+  });
+};

@@ -20,7 +20,7 @@ const renderProductList = (productList) => {
     <img src="${element.imgSrc_jpg}" class="card-img-top" style="height: 100%;" alt="">
     <div class="card-body">
         <h5 class="card-title">${element.name}</h5>
-        <button href="#" class="btn btn-primary">Thử đồ</button>
+        <button id="tryOnBtn" href="#" class="btn btn-primary" onclick="thuDo('${element.id}')">Thử đồ</button>
     </div>
 </div>
     </div>
