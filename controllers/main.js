@@ -56,7 +56,7 @@ const thuDo = (id) => {
           targetImg = document.getElementById("hairstyleImg");
           break;
         case "background":
-          targetImg = document.querySelector(".background");
+          targetImg = document.getElementById("backgroundImg");
           break;
         default:
           targetImg = null;
